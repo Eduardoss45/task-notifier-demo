@@ -1,93 +1,93 @@
 # 📢 Task Notifier Demo
 
-Projeto demonstrativo de **notificações em tempo real**, desenvolvido para mostrar como integrar um backend Node.js/Express com frontend HTML/CSS/JS usando Socket.IO.
+Demonstration project of **real-time notifications**, developed to showcase integration of a Node.js/Express backend with an HTML/CSS/JS frontend using Socket.IO.
 
-O objetivo deste repositório é servir como referência de implementação de um sistema funcional, leve e modular de notificações em tempo real para eventos de criação, edição e remoção de tarefas.
+The purpose of this repository is to serve as a reference for implementing a functional, lightweight, and modular real-time notification system for task creation, editing, and deletion events.
 
 ---
 
-## 🚀 Tecnologias e bibliotecas utilizadas
+## 🚀 Technologies and Libraries Used
 
 ### Backend
 
-- **Node.js + Express** – Servidor HTTP, organização de rotas e middlewares.
-- **Socket.IO** – Comunicação em tempo real (WebSockets), responsável por emitir eventos de notificação para todos os clientes conectados.
-- **MySQL (ou SQLite para demonstração)** – Armazenamento persistente de tarefas.
-- **dotenv** – Gerenciamento de variáveis de ambiente.
-- **nodemon** – Facilita desenvolvimento reiniciando o servidor automaticamente.
+* **Node.js + Express** – HTTP server, routing, and middleware organization.
+* **Socket.IO** – Real-time communication (WebSockets), responsible for emitting notification events to all connected clients.
+* **MySQL (or SQLite for demo)** – Persistent storage of tasks.
+* **dotenv** – Environment variable management.
+* **nodemon** – Facilitates development by automatically restarting the server.
 
 ### Frontend
 
-- **HTML/CSS/JS** – Estrutura e lógica da interface.
-- **Bootstrap 5** – Componentes visuais e responsividade.
-- **Bootstrap Icons** – Ícones visuais para botões e elementos.
-- **Socket.IO client** – Recebe eventos do servidor e atualiza o frontend em tempo real.
+* **HTML/CSS/JS** – Structure and logic of the interface.
+* **Bootstrap 5** – Visual components and responsive design.
+* **Bootstrap Icons** – Visual icons for buttons and interface elements.
+* **Socket.IO client** – Receives events from the server and updates the frontend in real time.
 
 ---
 
-## 📂 Estrutura do projeto
+## 📂 Project Structure
 
 ```
 task-notifier-demo/
 ├─ backend/
-│   ├─ server.js          # Servidor Express + Socket.IO
+│   ├─ server.js          # Express + Socket.IO server
 │   ├─ routes/
-│   │   └─ tasks.js       # Rotas CRUD de tarefas
+│   │   └─ tasks.js       # Task CRUD routes
 │   ├─ db/
-│   │   └─ config.js      # Configuração do banco de dados
+│   │   └─ config.js      # Database configuration
 │
 ├─ frontend/
-│   ├─ index.html         # Página principal
-│   ├─ app.js             # Lógica JavaScript do frontend
-│   ├─ style.css          # Estilos customizados
+│   ├─ index.html         # Main page
+│   ├─ app.js             # Frontend JavaScript logic
+│   ├─ style.css          # Custom styles
 ```
 
 ---
 
-## ⚙️ Funcionalidades implementadas
+## ⚙️ Implemented Features
 
-- **Criação de tarefas** – Usuário envia título de uma tarefa, backend salva no banco e emite evento para clientes conectados.
-- **Edição de tarefas** – Título da tarefa pode ser alterado; todos os clientes recebem notificação.
-- **Remoção de tarefas** – Deletar tarefas atualiza backend e envia evento de notificação.
-- **Notificações em tempo real** – Toasters exibem título, descrição e horário do evento.
-- **Frontend responsivo** – Layout baseado em Bootstrap, cards dinâmicos e container de toasts.
-
----
-
-## 🧩 Fluxo de comunicação
-
-1. Frontend conecta ao backend via **Socket.IO**.
-2. Requisições **HTTP (fetch)** manipulam CRUD de tarefas.
-3. Eventos do backend são emitidos para todos os clientes conectados.
-4. Frontend atualiza cards e exibe notificações automaticamente.
+* **Task Creation** – User submits a task title; backend saves it to the database and emits an event to connected clients.
+* **Task Editing** – Task titles can be updated; all clients receive notifications.
+* **Task Deletion** – Deleting tasks updates the backend and emits a notification event.
+* **Real-Time Notifications** – Toasters display title, description, and event timestamp.
+* **Responsive Frontend** – Bootstrap-based layout with dynamic cards and toast container.
 
 ---
 
-## 📌 Requisitos e considerações
+## 🧩 Communication Flow
 
-- Node.js 18+
-- MySQL 8+ (ou SQLite como alternativa)
-- Conexão de rede local ou servidor para comunicação via Socket.IO
-
-> O frontend foi desenvolvido de forma modular, mantendo separação clara entre HTML, CSS e JS. Isso facilita manutenção, integração com frameworks futuros e adição de funcionalidades, como autenticação ou histórico de notificações.
-
----
-
-## 🎯 Propósito do repositório
-
-- Servir como **demonstração prática** de notificações em tempo real.
-- Fornecer **exemplo de integração entre backend Node.js e frontend leve**.
-- Ilustrar boas práticas de separação de responsabilidades e comunicação via Socket.IO.
-- Funcionar como **base para projetos maiores**, como sistemas de tarefas, notificações corporativas ou painéis administrativos.
+1. Frontend connects to backend via **Socket.IO**.
+2. **HTTP (fetch) requests** handle task CRUD operations.
+3. Backend emits events to all connected clients.
+4. Frontend automatically updates cards and displays notifications.
 
 ---
 
-## 📚 Observações sobre dependências
+## 📌 Requirements and Considerations
 
-O projeto mantém package.json separados para frontend e backend, garantindo isolamento de dependências e evitando problemas com caminhos de arquivos e execução de scripts. Cada parte do projeto deve gerenciar suas próprias dependências.
+* Node.js 18+
+* MySQL 8+ (or SQLite as an alternative)
+* Local network or server connection for Socket.IO communication
+
+> The frontend was developed modularly, maintaining a clear separation between HTML, CSS, and JS. This simplifies maintenance, integration with future frameworks, and adding features like authentication or notification history.
 
 ---
 
-## 👨‍💻 Autor
+## 🎯 Repository Purpose
 
-Desenvolvido por [Eduardoss45](https://github.com/Eduardoss45)
+* Serve as a **practical demonstration** of real-time notifications.
+* Provide an **example of backend Node.js integration with a lightweight frontend**.
+* Illustrate best practices for separation of responsibilities and communication via Socket.IO.
+* Act as a **base for larger projects**, such as task management systems, corporate notifications, or admin dashboards.
+
+---
+
+## 📚 Dependency Notes
+
+The project keeps separate package.json files for frontend and backend, ensuring dependency isolation and avoiding file path or script execution issues. Each part of the project should manage its own dependencies.
+
+---
+
+## 👨‍💻 Author
+
+Developed by [Eduardoss45](https://github.com/Eduardoss45)
